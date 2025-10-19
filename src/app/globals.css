@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+:root {
+  /* Andhra Insight Brand Palette */
+  --background: #0b1220; /* deep navy background for contrast */
+  --foreground: #e6edf6; /* light foreground */
+  --primary: #1ea4ff; /* bright azure */
+  --secondary: #ff7a59; /* coral */
+  --accent: #9b59ff; /* violet */
+  --muted: #94a3b8; /* slate */
+
+  /* legacy accents mapped for backward compatibility */
+  --accent-green: var(--primary);
+  --accent-yellow: var(--secondary);
+  --accent-blue: var(--accent);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #070c17;
+    --foreground: #e6edf6;
+    --accent-blue: #8a5bff;
+    --accent-purple: #b084ff;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-telugu), "Noto Sans Telugu", "Open Sans", "Roboto",
+    -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Noto Serif Telugu", Georgia, serif;
+  font-weight: 700;
+}
+
+/* Accent color utilities */
+.text-accent-green {
+  color: var(--accent-green);
+}
+.text-accent-yellow {
+  color: var(--accent-yellow);
+}
+.text-accent-blue {
+  color: var(--accent-blue);
+}
+.text-primary {
+  color: var(--primary);
+}
+.text-secondary {
+  color: var(--secondary);
+}
+.text-muted {
+  color: var(--muted);
+}
+
+.bg-accent-green {
+  background-color: var(--accent-green);
+}
+.bg-accent-yellow {
+  background-color: var(--accent-yellow);
+}
+.bg-accent-blue {
+  background-color: var(--accent-blue);
+}
+.bg-primary {
+  background-color: var(--primary);
+}
+.bg-secondary {
+  background-color: var(--secondary);
+}
+
+.border-accent-green {
+  border-color: var(--accent-green);
+}
+.border-accent-yellow {
+  border-color: var(--accent-yellow);
+}
+.border-accent-blue {
+  border-color: var(--accent-blue);
+}
+.border-primary {
+  border-color: var(--primary);
+}
+.border-secondary {
+  border-color: var(--secondary);
+}
+
+/* Hover effects with accent colors */
+.hover-accent-green:hover {
+  color: var(--accent-green);
+}
+.hover-accent-yellow:hover {
+  color: var(--accent-yellow);
+}
+.hover-accent-blue:hover {
+  color: var(--accent-blue);
+}
+.hover-primary:hover {
+  color: var(--primary);
+}
+.hover-secondary:hover {
+  color: var(--secondary);
+}
+
+/* Line clamp utilities */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-clamp: 2;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-clamp: 3;
+}
+
+/* ticker scroll animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
