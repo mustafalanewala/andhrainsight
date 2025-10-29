@@ -21,6 +21,7 @@ export default function CategoryPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = use(params);
+  const decodedSlug = decodeURIComponent(slug);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 12;
 
@@ -29,7 +30,7 @@ export default function CategoryPage({
   // Reset to page 1 when category changes
   useEffect(() => {
     setCurrentPage(1);
-  }, [slug]);
+  }, [decodedSlug]);
 
   if (isLoading) {
     return (
@@ -84,8 +85,8 @@ export default function CategoryPage({
     );
   }
 
-  const categoryName = getCategoryFromSlug(data?.data?.news || [], slug);
-  const categoryNews = filterByCategory(data?.data?.news || [], slug);
+  const categoryName = getCategoryFromSlug(data?.data?.news || [], decodedSlug);
+  const categoryNews = filterByCategory(data?.data?.news || [], decodedSlug);
 
   if (categoryNews.length === 0) {
     notFound();
